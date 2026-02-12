@@ -18,21 +18,21 @@ const baseDatos = [
     { id: 9, img1: "images/n1_c9.png", img2: "images/n1_d9.png" }, 
     { id: 10, img1: "images/n1_c10.png", img2: "images/n1_d10.png" },
     // --- PAREJAS ADICIONALES (Niveles 3, 4, 5) ---
-    { id: 11, img1: "images/n1_c11.png", img2: "images/n1_d11.png" },
-    { id: 12, img1: "images/n1_c12.png", img2: "images/n1_d12.png" },
-    { id: 13, img1: "images/n1_c13.png", img2: "images/n1_d13.png" },
-    { id: 14, img1: "images/n1_c14.png", img2: "images/n1_d14.png" },
-    { id: 15, img1: "images/n1_c15.png", img2: "images/n1_d15.png" },
-    { id: 16, img1: "images/n1_c16.png", img2: "images/n1_d16.png" },
-    { id: 17, img1: "images/n1_c17.png", img2: "images/n1_d17.png" },
-    { id: 18, img1: "images/n1_c18.png", img2: "images/n1_d18.png" },
-    { id: 19, img1: "images/n1_c19.png", img2: "images/n1_d19.png" },
-    { id: 20, img1: "images/n1_c20.png", img2: "images/n1_d20.png" },
-    { id: 21, img1: "images/n1_c21.png", img2: "images/n1_d21.png" },
-    { id: 22, img1: "images/n1_c22.png", img2: "images/n1_d22.png" },
-    { id: 23, img1: "images/n1_c23.png", img2: "images/n1_d23.png" },
-    { id: 24, img1: "images/n1_c24.png", img2: "images/n1_d24.png" },
-    { id: 25, img1: "images/n1_c25.png", img2: "images/n1_d25.png" }
+    { id: 11, img1: "images/n1_c11.jpg", img2: "images/n1_d11.jpg" },
+    { id: 12, img1: "images/n1_c12.jpg", img2: "images/n1_d12.jpg" },
+    { id: 13, img1: "images/n1_c13.jpg", img2: "images/n1_d13.jpg" },
+    { id: 14, img1: "images/n1_c14.jpg", img2: "images/n1_d14.jpg" },
+    { id: 15, img1: "images/n1_c15.jpg", img2: "images/n1_d15.jpg" },
+    { id: 16, img1: "images/n1_c16.jpg", img2: "images/n1_d16.jpg" },
+    { id: 17, img1: "images/n1_c17.jpg", img2: "images/n1_d17.jpg" },
+    { id: 18, img1: "images/n1_c18.jpg", img2: "images/n1_d18.jpg" },
+    { id: 19, img1: "images/n1_c19.jpg", img2: "images/n1_d19.jpg" },
+    { id: 20, img1: "images/n1_c20.jpg", img2: "images/n1_d20.jpg" },
+    { id: 21, img1: "images/n1_c21.jpg", img2: "images/n1_d21.jpg" },
+    { id: 22, img1: "images/n1_c22.jpg", img2: "images/n1_d22.jpg" },
+    { id: 23, img1: "images/n1_c23.jpg", img2: "images/n1_d23.jpg" },
+    { id: 24, img1: "images/n1_c24.jpg", img2: "images/n1_d24.jpg" },
+    { id: 25, img1: "images/n1_c25.jpg", img2: "images/n1_d25.jpg" }
 ];
 // NOTA: Para probar rápido, si no tienes las 30 imágenes aún, 
 // puedes repetir las mismas rutas temporalmente para rellenar la lista.
@@ -115,12 +115,24 @@ function crearCartaImagen(id, rutaImagen) {
     const caraFrente = document.createElement('div');
     caraFrente.classList.add('face');
     
+    // --- MEJORA: Texto de respaldo si falla la imagen ---
+    const texto = document.createElement('span');
+    texto.innerText = id;
+    texto.style.fontSize = '3rem';
+    texto.style.fontWeight = 'bold';
+    texto.style.color = '#8B6220';
+    texto.style.display = 'none';
+    caraFrente.appendChild(texto);
+
     // AQUÍ ESTÁ EL CAMBIO: Creamos una etiqueta <img>
     const imagen = document.createElement('img');
     imagen.src = rutaImagen;
-    imagen.alt = "Carta de juego";
-    // Si la imagen no carga, mostramos un error visual
-    imagen.onerror = function() { this.src = 'ruta/imagen_error.png'; }; 
+    imagen.alt = `Carta ${id}`;
+    // Si la imagen no carga, ocultamos la imagen y mostramos el número
+    imagen.onerror = function() { 
+        this.style.display = 'none';
+        texto.style.display = 'block';
+    }; 
     
     caraFrente.appendChild(imagen);
     carta.appendChild(caraTrasera);
