@@ -15,7 +15,7 @@ const baseDatos = [
     { id: 8, img1: "images/n1_c8.png", img2: "images/n1_d8.png" },
     { id: 9, img1: "images/n1_c9.png", img2: "images/n1_d9.png" }, 
     { id: 10, img1: "images/n1_c10.png", img2: "images/n1_d10.png" },
-    // --- PAREJAS ADICIONALES (Niveles 3, 4, 5) ---
+    //PAREJAS ADICIONALES (Niveles 3, 4, 5)
     { id: 11, img1: "images/n1_c11.jpg", img2: "images/n1_d11.jpg" },
     { id: 12, img1: "images/n1_c12.jpg", img2: "images/n1_d12.jpg" },
     { id: 13, img1: "images/n1_c13.jpg", img2: "images/n1_d13.jpg" },
@@ -110,7 +110,7 @@ function crearCartaImagen(id, rutaImagen) {
     const caraFrente = document.createElement('div');
     caraFrente.classList.add('face');
     
-    // --- MEJORA: Texto de respaldo si falla la imagen ---
+    //Texto de respaldo si falla la imagen
     const texto = document.createElement('span');
     texto.innerText = id;
     texto.style.fontSize = '3rem';
@@ -206,7 +206,6 @@ function verificarPareja() {
 
 function verificarVictoria() {
     // Verificamos si encontramos todos los pares cargados en mesa
-    // (Útil si un nivel tiene menos de 10 pares por falta de imágenes)
     if (paresEncontrados === (cartasEnMesa.length / 2)) {
         lblStats.innerText = `¡Nivel Completado! Puntos: ${puntos}`;
         btnBoton.innerText = "Siguiente Nivel";
@@ -216,7 +215,7 @@ function verificarVictoria() {
 
 // Función para ocultar la bienvenida y arrancar el juego
 function iniciarSistema() {
-    // 1. Efecto visual de desvanecimiento (opcional, pero se ve bien)
+    // 1. Efecto visual de desvanecimiento
     const welcomeScreen = document.getElementById('welcome-screen');
     welcomeScreen.style.opacity = '0';
     welcomeScreen.style.transition = 'opacity 0.5s';
@@ -230,7 +229,6 @@ function iniciarSistema() {
         document.getElementById('stats').style.display = 'block';
 
         // 4. Cargar el primer nivel automáticamente
-        // (Asegúrate de que no se cargue doble si tenías un cargarNivel al inicio)
         cargarNivel(1); 
         
     }, 500); // Espera 0.5s a que termine la animación
