@@ -3,8 +3,6 @@ const paresPorNivel = 5;
 const totalNiveles = 5;   
 
 // --- BASE DE DATOS DE IMÁGENES ---
-// Aquí es donde vinculas tus archivos. 
-// Asegúrate de que las imágenes estén en una carpeta (ej. "images/")
 const baseDatos = [
     // --- NIVEL 1 ---
     { id: 1, img1: "images/n1_c1.png", img2: "images/n1_d1.png" }, 
@@ -34,9 +32,6 @@ const baseDatos = [
     { id: 24, img1: "images/n1_c24.jpg", img2: "images/n1_d24.jpg" },
     { id: 25, img1: "images/n1_c25.jpg", img2: "images/n1_d25.jpg" }
 ];
-// NOTA: Para probar rápido, si no tienes las 30 imágenes aún, 
-// puedes repetir las mismas rutas temporalmente para rellenar la lista.
-
 // Variables de estado
 let nivelActual = 1;
 let cartasEnMesa = [];
@@ -124,7 +119,7 @@ function crearCartaImagen(id, rutaImagen) {
     texto.style.display = 'none';
     caraFrente.appendChild(texto);
 
-    // AQUÍ ESTÁ EL CAMBIO: Creamos una etiqueta <img>
+    //Creamos una etiqueta <img>
     const imagen = document.createElement('img');
     imagen.src = rutaImagen;
     imagen.alt = `Carta ${id}`;
