@@ -1,29 +1,24 @@
 :root {
-    /* --- NUEVA PALETA: HARDWARE SKETCH --- */
-    
-    /* Fondo: Blanco Papel (Cálido) */
+    /*Blanco Papel*/
     --bg-body: #FFFCF9;       
     
-    /* UI: Dorado Antiguo (Para la barra superior y bordes fuertes) */
+    /*Dorado Antiguo */
     --bg-ui: #8B6220;         
     
-    /* Acento: Ocre Suave (Para botones y detalles) */
+    /*Ocre Suave */
     --accent: #A67C37;        
-    
-    /* Texto: Negro Tinta (Para contraste sobre el papel) */
+
     --text-color: #000000;    
-    
-    /* Texto Alternativo: Blanco (Solo para usar sobre el dorado oscuro) */
+
     --text-inverse: #ffffff;
 
-    /* Reverso Carta: El mismo dorado del marco */
+    /* Reverso Carta*/
     --card-back-bg: #8B6220;  
 }
 
 body {
     margin: 0;
     background-color: var(--bg-body);
-    /* CAMBIO: Quitamos el degradado negro y ponemos uno sutil de "papel viejo" */
     background-image: radial-gradient(circle, #FFFCF9 20%, #E6DCCF 100%);
     min-height: 100vh;
     font-family: 'Courier New', Courier, monospace; /* SUGERENCIA: Fuente tipo máquina de escribir */
@@ -34,7 +29,7 @@ body {
 #ui-controls {
     position: sticky;
     top: 0;
-    z-index: 1000; /* Asegura que esté SIEMPRE encima de las cartas */
+    z-index: 1000;
     background: var(--bg-ui);
     padding: 10px;
     display: flex;
@@ -86,8 +81,6 @@ body {
     padding-bottom: 50px;
 }
 
-/* --- AQUÍ ESTÁ LA SOLUCIÓN A TUS PROBLEMAS --- */
-
 /* 1. LA CARTA (El contenedor) */
 .card {
    width: 140px;   /* Ancho fijo */
@@ -121,12 +114,10 @@ body {
     /* CLAVE: Oculta la parte trasera para que no se vea "doble" */
     backface-visibility: hidden; 
     -webkit-backface-visibility: hidden;
-    
-    /* CLAVE: Todo lo que sobre, se recorta */
     overflow: hidden; 
 }
 
-/* 3. CARA DE FRENTE (Tus diseños de Canva) */
+/* 3. CARA DE FRENTE */
 .card .face {
     background-color: white; /* Fondo blanco para que no sea transparente */
     transform: rotateY(180deg); /* Ya está girada esperando ser volteada */
