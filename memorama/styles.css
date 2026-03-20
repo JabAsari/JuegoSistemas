@@ -49,6 +49,7 @@ body {
     color: var(--text-inverse);
     font-weight: bold;
     text-transform: uppercase; 
+    position: absolute;
 }
 
 #btn-start {
@@ -60,6 +61,8 @@ body {
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
+    margin-left: auto;
+    margin-right: 20px;
 }
 #btn-start:disabled { background: var(--accent); color: var(--text-inverse); }
 
@@ -211,4 +214,34 @@ body {
 #btn-start-system:hover {
     background-color: #FFFCF9;
     color: #8B6220;
+}
+
+.btn-atras{
+    text-decoration: none;
+    background: var(--bg-body);
+    color: var(--bg-ui);
+    border: 2px solid var(--accent);
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+.btn-atras:hover{
+    background: var(--accent);
+    color: var(--text-inverse);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px){
+    #ui-controls{
+        flex-direction: column;
+        gap: 10px;
+    }
 }

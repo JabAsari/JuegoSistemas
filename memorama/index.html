@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memorama de Sistemas</title>
+    <title>Memorama</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <div id="welcome-screen">
         <div class="modal-content">
-            <h1>MEMORAMA DE SISTEMAS</h1>
+            <h1>MEMORAMA DE CONCEPTOS</h1>
             <p>Relaciona cada concepto con su definición correcta.</p>
             <button id="btn-start-system" onclick="iniciarSistema()">Comenzar</button>
         </div>
     </div>
 
     <div id="ui-controls" style="display: none;">
+        <div class="nav-bar">
+            <a href="../menu.html" class="btn-atras">Volver al Menu</a>
+        </div>
         <h2 id="level-indicator">Nivel 1</h2>
+        <br>
         <button id="btn-start" onclick="accionBoton()">¡Mezclar y Jugar!</button>
     </div>
 
