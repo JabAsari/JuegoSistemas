@@ -3,8 +3,6 @@ const paresPorNivel = 5;
 const totalNiveles = 5;   
 
 // --- BASE DE DATOS DE IMÁGENES ---
-// Aquí es donde vinculas tus archivos. 
-// Asegúrate de que las imágenes estén en una carpeta (ej. "images/")
 const baseDatos = [
     // --- NIVEL 1 ---
     { id: 1, img1: "images/n1_c1.png", img2: "images/n1_d1.png" }, 
@@ -17,7 +15,7 @@ const baseDatos = [
     { id: 8, img1: "images/n1_c8.png", img2: "images/n1_d8.png" },
     { id: 9, img1: "images/n1_c9.png", img2: "images/n1_d9.png" }, 
     { id: 10, img1: "images/n1_c10.png", img2: "images/n1_d10.png" },
-    // --- PAREJAS ADICIONALES (Niveles 3, 4, 5) ---
+    //PAREJAS ADICIONALES (Niveles 3, 4, 5)
     { id: 11, img1: "images/n1_c11.jpg", img2: "images/n1_d11.jpg" },
     { id: 12, img1: "images/n1_c12.jpg", img2: "images/n1_d12.jpg" },
     { id: 13, img1: "images/n1_c13.jpg", img2: "images/n1_d13.jpg" },
@@ -34,9 +32,6 @@ const baseDatos = [
     { id: 24, img1: "images/n1_c24.jpg", img2: "images/n1_d24.jpg" },
     { id: 25, img1: "images/n1_c25.jpg", img2: "images/n1_d25.jpg" }
 ];
-// NOTA: Para probar rápido, si no tienes las 30 imágenes aún, 
-// puedes repetir las mismas rutas temporalmente para rellenar la lista.
-
 // Variables de estado
 let nivelActual = 1;
 let cartasEnMesa = [];
@@ -115,7 +110,7 @@ function crearCartaImagen(id, rutaImagen) {
     const caraFrente = document.createElement('div');
     caraFrente.classList.add('face');
     
-    // --- MEJORA: Texto de respaldo si falla la imagen ---
+    //Texto de respaldo si falla la imagen
     const texto = document.createElement('span');
     texto.innerText = id;
     texto.style.fontSize = '3rem';
@@ -124,7 +119,7 @@ function crearCartaImagen(id, rutaImagen) {
     texto.style.display = 'none';
     caraFrente.appendChild(texto);
 
-    // AQUÍ ESTÁ EL CAMBIO: Creamos una etiqueta <img>
+    //Creamos una etiqueta <img>
     const imagen = document.createElement('img');
     imagen.src = rutaImagen;
     imagen.alt = `Carta ${id}`;
@@ -211,7 +206,6 @@ function verificarPareja() {
 
 function verificarVictoria() {
     // Verificamos si encontramos todos los pares cargados en mesa
-    // (Útil si un nivel tiene menos de 10 pares por falta de imágenes)
     if (paresEncontrados === (cartasEnMesa.length / 2)) {
         lblStats.innerText = `¡Nivel Completado! Puntos: ${puntos}`;
         btnBoton.innerText = "Siguiente Nivel";
@@ -221,7 +215,7 @@ function verificarVictoria() {
 
 // Función para ocultar la bienvenida y arrancar el juego
 function iniciarSistema() {
-    // 1. Efecto visual de desvanecimiento (opcional, pero se ve bien)
+    // 1. Efecto visual de desvanecimiento
     const welcomeScreen = document.getElementById('welcome-screen');
     welcomeScreen.style.opacity = '0';
     welcomeScreen.style.transition = 'opacity 0.5s';
@@ -235,7 +229,6 @@ function iniciarSistema() {
         document.getElementById('stats').style.display = 'block';
 
         // 4. Cargar el primer nivel automáticamente
-        // (Asegúrate de que no se cargue doble si tenías un cargarNivel al inicio)
         cargarNivel(1); 
         
     }, 500); // Espera 0.5s a que termine la animación
