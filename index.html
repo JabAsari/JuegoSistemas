@@ -1,37 +1,38 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Glosario Juegos</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="estilos.css">
     </head>
     <body>
         <div id="bs">
             <h1>BIENVENIDO AL GLOSARIO</h1>
-            <P>En estos juegos aprenderas conceptos de Programacion de Sistemas</P>
+            <p>En estos juegos aprenderas conceptos de Programacion de Sistemas</p>
             <h3>Elija uno de los siguientes niveles</h3>
         </div>
-        <div id="menu-container">
-            <div id="btn-Mem">
-                <a href="memorama/next1.html">
 
-                    <button id="M">Memorama</button>
-                </a>
-            </div>
-            <div id="btn-J2">
-                <a href="memorama/next1.html">
-                    <button id="M">Memorama</button>
-                </a>
-            </div>
-            <div id="btn-J3">
-                <a href="memorama/next1.html">
-                    <button id="M">Memorama</button>
-                </a>
-            </div>
+        <!-- FIX: cambiado id="menu-container" a class="menu-container" -->
+        <div class="menu-container">
+            <a href="memorama/next1.html">
+                <button class="btn-nivel">Memorama</button>
+            </a>
+            <a href="memorama/next1.html">
+                <button class="btn-nivel">Memorama</button>
+            </a>
+            <a href="memorama/next1.html">
+                <button class="btn-nivel">Memorama</button>
+            </a>
         </div>
+
+        <!-- FIX: footer movido dentro del body -->
+        <footer>
+            <p>© Danna Paola Padilla Cruz - Jaime
+                <br>Programacion de Sistemas - Neira Sanchez Rojas
+            </p>
+        </footer>
     </body>
-    <footer>
-        <p>© Danna Paola Padilla Cruz -  Jaime 
-            <br>Programacion de Sistemas - Neira Sanchez Rojas
-        </p>
-    </footer>
 </html>
