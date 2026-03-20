@@ -131,3 +131,24 @@ button:active { transform: scale(0.98); }
     background-color: #4d28e5;
     transform: translateY(-2px);
 }
+
+.btn-back-root{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #a4b3ff;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-back-root:hover{
+    background-color: #4d28e5;
+    color: white;
+    transform: translateY(-2px);
+}

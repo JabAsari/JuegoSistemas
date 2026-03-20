@@ -168,11 +168,6 @@ function showFinalResults(score, totalQuestions) {
     document.getElementById('final-levels').innerText = `${levelsCompletedCount}/4`;
 }
 
-document.getElementById('btn-restart').addEventListener('click', () => {
-    location.reload(); 
-});
-
-
 /*mezclar respuestas*/
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
