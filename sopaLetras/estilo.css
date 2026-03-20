@@ -1,0 +1,97 @@
+:root {
+    --bg-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --primary-color: #4a90e2;
+    --primary-hover: #357abd;
+    --text-color: #2c3e50;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Para que el botón quede debajo de la tarjeta */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--text-color);
+}
+
+#bs {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    margin-bottom: 20px; /* Espacio entre tarjeta y botón */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    border: 3px solid var(--primary-color);
+}
+
+/* --- Estilos para el Botón --- */
+
+#btn-atras {
+    text-align: center;
+}
+
+#btn-atras button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px; /* Forma de píldora */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+#btn-atras button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(74, 144, 226, 0.4);
+}
+
+#btn-atras button:active {
+    transform: translateY(0);
+}
+
+#btn-atras a {
+    text-decoration: none; /* Quita el subrayado azul del link */
+}
+
+/* Loader decorativo */
+.loader {
+    margin: 20px auto;
+    width: 50px;
+    height: 5px;
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.loader::after {
+    content: "";
+    position: absolute;
+    left: -50%;
+    width: 50%;
+    height: 100%;
+    background: var(--primary-color);
+    animation: loading 1.5s infinite linear;
+}
+
+@keyframes loading {
+    0% { left: -50%; }
+    100% { left: 100%; }
+}

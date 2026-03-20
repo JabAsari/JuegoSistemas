@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snoopy Quiz System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/struct.css">
+    <link rel="stylesheet" href="css/elements.css">
+    <link rel="stylesheet" href="css/bottons.css">
+    <link rel="stylesheet" href="css/results.css">
+
+</head>
+
+<body> <section id="screen-login">
+        <input type="text" id="username" placeholder="Tu Nombre" autocomplete="off">
+        <button id="btn-start-app">¡Iniciar Juego!</button>
+    </section>
+
+    <main id="main-container" class="main-container hidden">
+        
+        <section class="game-area">
+            <div class="game-background-image"></div> 
+            
+            <div class="game-content">
+                <div id="level-intro">
+                    <h2 id="display-level-title">Nivel 1</h2>
+                    
+                    <button id="btn-play-level"></button>
+                    
+                    <p id="level-instructions">Selecciona las respuestas correctas</p>
+                </div>
+
+                <div id="game-play" class="hidden">
+                    <div class="question-box">
+                        <p id="question-text"></p>
+                    </div>
+                    <div class="options-container" id="options-wrapper"></div>
+                    <div class="game-controls">
+                        <button id="btn-next" class="hidden">Continuar →</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="level-footer">
+                <h3 id="footer-level-name">Nivel 1</h3>
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <h3>Seleccionar Nivel</h3>
+            <button class="level-btn active" data-level="1">Nivel 1</button>
+            <button class="level-btn locked" data-level="2" disabled>Nivel 2</button>
+            <button class="level-btn locked" data-level="3" disabled>Nivel 3</button>
+            <button class="level-btn locked" data-level="4" disabled>Nivel 4</button>
+            
+            <button id="btn-quit">Salir</button> 
+        </aside>
+
+    </main>
+
+    <script src="js/questions.js"></script>
+    <script src="js/main.js"></script>
+
+    <section id="screen-results" class="hidden">
+        <div class="results-container">
+            <img src="assets/tocar.png" alt="Snoopy" class="results-icon"> <h2>¡Cuestionario Completado!</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-label">Puntaje Total</span>
+                    <span id="final-score" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Niveles Superados</span>
+                    <span id="final-levels" class="stat-value">4/4</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Precisión</span>
+                    <span id="final-accuracy" class="stat-value">0%</span>
+                </div>
+            </div>
+            <button id="btn-restart" class="btn-restart">Jugar de Nuevo</button>
+        </div>
+
+    </section>
+</body>
+</html>

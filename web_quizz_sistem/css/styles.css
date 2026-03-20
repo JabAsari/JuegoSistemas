@@ -1,0 +1,30 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #0e52f1 0%, #7f90e4 33%, #8d6bd5 66%, #0816d6 100%);
+    --panel-color: rgba(241, 239, 224, 0.95);
+    --accent-blue: #3764f5;
+    --accent-soft: #768acd;
+    --danger-color: #ffaaaa;
+    --text-color: #333;
+    --border-radius: 20px;
+    --shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.hidden {
+    display: none !important;
+}
